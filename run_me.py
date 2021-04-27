@@ -11,8 +11,8 @@ if fullscreen:
     systemHeight = GetSystemMetrics(1)
     screen = pygame.display.set_mode((systemHeight, systemWidth), pygame.FULLSCREEN)
 else:
-    systemWidth = 500
-    systemHeight = 500
+    systemWidth = 750
+    systemHeight = 750
     screen = pygame.display.set_mode((systemWidth, systemHeight))
 pygame.display.set_caption("Sideflyer")
 

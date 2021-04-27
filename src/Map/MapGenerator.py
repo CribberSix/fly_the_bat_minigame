@@ -6,8 +6,9 @@ class MapGenerator:
     def __init__(self):
 
         self.block_no = 0
-        self.block_1 = 1
-        self.block_2 = 2
+        self.block_mid = 1
+        self.block_bottom_top = 2
+        self.block_top_bottom = 3
 
         self.height = 10
         self.min_space = 3
@@ -28,14 +29,20 @@ class MapGenerator:
 
         row = []
         if limit_above > 0:
-            for _ in range(0, limit_above):
-                row.append(self.block_1)
+            for i in range(0, limit_above):
+                if i < limit_above - 1:
+                    row.append(self.block_mid)  # mid
+                else:
+                    row.append(self.block_top_bottom)  # end of top block
 
         for _ in range(limit_above, limit_below):
             row.append(self.block_no)
 
         if limit_below < self.height:
-            for _ in range(limit_below, self.height):
-                row.append(self.block_2)
+            for i in range(limit_below, self.height):
+                if i == limit_below:
+                    row.append(self.block_bottom_top)
+                else:
+                    row.append(self.block_mid)
 
         return row

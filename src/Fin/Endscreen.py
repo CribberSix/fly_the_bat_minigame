@@ -32,7 +32,6 @@ class Endscreen:
 
         self.points_background = pygame.Rect(self.text_x - 10, self.text_y, text_w + 20, text_h)
 
-
     def render(self):
         while True:
             # Pygame input
