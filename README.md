@@ -1,9 +1,5 @@
-# Chuck the owl
+# A bat's flight
 
-
-
-
-
-### Art by maaot
-
-https://maaot.itch.io/mossy-cavern
+1. Install the packages with `pip install -r requirements.txt`. 
+2. Run the game with `python run_me.py`
+3. Have fun! 
