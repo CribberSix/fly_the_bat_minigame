@@ -4,7 +4,7 @@ A bat's flight is a simple sidescroller. The goal is to fly the bat as far as po
 The only input you will need is the `spacebar` .
  
  
-![](resources/bat_flight_350.gif)
+![](resources/bat_flight.gif)
  
 # Features
  
