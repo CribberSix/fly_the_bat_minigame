@@ -25,8 +25,8 @@ class Block:
         self.screen = screen if screen is not None else pygame.display.get_surface()
 
     def render(self):
-        pygame.draw.rect(self.screen, (0, 0, 0), self.img_rect, 2)
-        pygame.draw.rect(self.screen, (255, 255, 0), self.hitbox, 2)
+        #pygame.draw.rect(self.screen, (0, 0, 0), self.img_rect, 2)
+        #pygame.draw.rect(self.screen, (255, 255, 0), self.hitbox, 2)
         self.screen.blit(self.img, self.img_rect)
 
     def move(self, speed):
