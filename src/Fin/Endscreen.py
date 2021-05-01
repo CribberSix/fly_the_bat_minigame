@@ -1,4 +1,4 @@
-from pygame_codeassets import TextButton
+from src.Button.TextButton import TextButton
 import pygame
 import sys
 
