@@ -24,13 +24,10 @@ class Endscreen:
 
         self.font = pygame.font.Font("resources/Fonts/Quicksand-Bold.ttf", 30)
 
-        self.points_textsurface = self.font.render(f"You got {str(self.points)} points!", False, (0, 0, 0))
-        text_w = self.points_textsurface.get_width()
-        text_h = self.points_textsurface.get_height()
+        self.points_textsurface = self.font.render(f"You got {str(self.points)} points!", False, (0, 0, 0), (38, 70, 83))
+        text_w, text_h = self.points_textsurface.get_size()
         self.text_x = int((w/2) - (text_w / 2))
         self.text_y = int((h / 2) - (text_h / 2)) - 100
-
-        self.points_background = pygame.Rect(self.text_x - 10, self.text_y, text_w + 20, text_h)
 
     def render(self):
         while True:
@@ -41,13 +38,13 @@ class Endscreen:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
+                if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+                    return  # continue by pressing the spacebar
 
-            # Rendering
-            pygame.draw.rect(self.screen, (255, 255, 255), self.points_background)
-            self.screen.blit(self.points_textsurface, (self.text_x, self.text_y))
+            self.screen.blit(self.points_textsurface, (self.text_x, self.text_y))  # Render points
             reset_return = self.button_continue.render(mouse, pygame_events)
             if reset_return is not None:
-                return
+                return  # continue by pressing the button
 
             pygame.display.flip()
             pygame.time.Clock().tick(30)
