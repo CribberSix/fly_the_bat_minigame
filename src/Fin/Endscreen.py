@@ -7,24 +7,19 @@ class Endscreen:
 
     def __init__(self, points, screen=None):
 
-        self.text = "THE END"
         self.screen = screen if screen is not None else pygame.display.get_surface()
-        self.points = points
 
-        self.button_w = 300
-        self.button_h = 50
         w, h = pygame.display.get_surface().get_size()
-        self.button_x = int((w/2) - (self.button_w / 2))
-        self.button_y = int((h / 2) - (self.button_h / 2))
+        button_x = int((w/2) - (self.button_w / 2))
+        button_y = int((h / 2) - (self.button_h / 2))
 
         color_bg_active = (42, 157, 143)
         color_bg_inactive = (0, 0, 0)
-        self.button_continue = TextButton(self.screen, self.button_x, self.button_y, self.button_w, self.button_h,
+        self.button_continue = TextButton(self.screen, button_x, button_y, 300, 50,
                                           "Continue", color_bg_active, color_bg_inactive)
 
         self.font = pygame.font.Font("resources/Fonts/Quicksand-Bold.ttf", 30)
-
-        self.points_textsurface = self.font.render(f"You got {str(self.points)} points!", False, (0, 0, 0), (38, 70, 83))
+        self.points_textsurface = self.font.render(f"You got {str(points)} points!", False, (0, 0, 0), (38, 70, 83))
         text_w, text_h = self.points_textsurface.get_size()
         self.text_x = int((w/2) - (text_w / 2))
         self.text_y = int((h / 2) - (text_h / 2)) - 100

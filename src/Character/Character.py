@@ -5,8 +5,8 @@ class Character:
 
     def __init__(self, x, y, scale=1, screen=None):
         width = int(scale * 100)
-        self.img = pygame.transform.scale(pygame.image.load("resources/Character/tile000.png"), (width, width))
-        self.img_rect = self.img.get_rect()
+        img = pygame.transform.scale(pygame.image.load("resources/Character/tile000.png"), (width, width))
+        self.img_rect = img.get_rect()
         self.img_rect.x = x
         self.img_rect.y = y
         self.hitbox = pygame.Rect((x + int(width/3), y + int(width/6)), (int(width/3), int(width/3)))
